@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div ng-app="peopleApp" ng-controller="peopleController">
+        <!-- Input fields for adding a new person -->
+        <label for="newName">Name:</label>
+        <input type="text" ng-model="newName">
+        <label for="newCity">City:</label>
+        <input type="text" ng-model="newCity">
+        <!-- Button to add a new person to the list -->
+        <button ng-click="addPerson()">Add Person</button>
+        <!-- Display the list of people using ng-repeat -->
+        <ul>
+        <li ng-repeat="person in people">{{ person.name }} - {{ person.city }}</li>
+        </ul>
+        </div>
+        <!-- AngularJS script to define the module and controller -->
+        <script>
+        angular.module('peopleApp', [])
+        .controller('peopleController', function ($scope) {
+        // Initial list of people
+        $scope.people = [];
+        // Function to add a new person to the list
+        $scope.addPerson = function () {
+        // Check if both name and city are provided
+        if ($scope.newName && $scope.newCity) {
+        // Add the new person to the list
+        $scope.people.push({ name: $scope.newName, city:
+        $scope.newCity });
+        // Clear the input fields after adding a person
+        $scope.newName = '';
+        $scope.newCity = '';
+        } else {
+        // Display an alert if either name or city is missing
+        alert('Please enter both Name and City.');
+        }
+        };
+        });
+        </script>
+        
+</body>
+</html>

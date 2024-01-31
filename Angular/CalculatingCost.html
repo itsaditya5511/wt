@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div ng-app="" ng-init="quantity=1; price=5">
+        <!-- Input field for entering the quantity, linked to the model 'quantity' -->
+        Quantity: <input type="number" ng-model="quantity">
+        <br>
+        <!-- Input field for entering the price, linked to the model 'price' -->
+        Costs: <input type="number" ng-model="price">
+        <br>
+        <!-- Display the total cost in dollars using data binding -->
+        Total in dollar: {{ quantity * price }}
+        </div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Define the character set and viewport settings for the document -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Include the AngularJS library -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<!-- Set the title of the document -->
+<title>Document</title>
+</head>
+<body>
+<!-- Introduction text -->
+<p>
+Click on the Headers of the Table to sort them. </p>
+<!-- AngularJS application and controller -->
+<div ng-app="ap1" ng-controller="ctr1">
+<!-- Table with headers and dynamic data binding -->
+<table border="2px solid black" width="100%">
+<!-- Table headers with ng-click to trigger sorting -->
+<tr>
+<th ng-click="orderByMe('name')">Name</th>
+<th ng-click="orderByMe('city')">City</th>
+</tr>
+<!-- Table rows with ng-repeat to iterate over data and orderBy filter for
+sorting -->
+<tr ng-repeat="x in names | orderBy:myOrderBy">
+<!-- Displaying data in each cell -->
+<td> {{x.name}} </td>
+<td> {{x.city}} </td>
+</tr>
+</table>
+</div>
+<!-- AngularJS script to define the module, controller, and data -->
+<script>
+angular.module('ap1', []).controller('ctr1', ($scope) => {
+// Sample data for the table
+$scope.names = [{
+name: 'ABC', city: 'USA' }, {
+name: 'PQR', city: 'Dubai' }, {
+name: 'STU',
+city: London }, {
+name: 'VWX', city: 'Germany' }, {
+name: 'XYZ', city: 'Italy' }, {
+name: 'LMN', city: 'Russia' }, {
+name: 'DEF', city: 'Cannada' }, {
+name: 'GHI', city: 'Greenland' }, {
+name: 'JKL', city: 'India' }]
+// Function to set the sorting order
+$scope.orderByMe = function (x) {
+$scope.myOrderBy = x;
+}
+});
+</script>
+</body>
+</html>

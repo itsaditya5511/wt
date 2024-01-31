@@ -1,0 +1,21 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        <title>Document</title>
+    </head>
+    <body>
+        <div ng-app="" ng-init="Students=['ABC','PQR','STU','VWX','XYZ']">
+            <!-- Display the first student's name using array indexing -->
+            <h1>Name of the Students: {{Students[0]}}</h1>
+            <!-- Iterate through the 'Students' array using ng-repeat and display each
+            student's name -->
+            <h1 ng-repeat="x in Students">Name:{{x}}</h1>
+            <!-- Another way to display each student's name using ng-repeat -->
+            <h1 ng-repeat="x in Students">Name of the Students: {{x}}</h1>
+            </div>
+            
+    </body>
+    </html>

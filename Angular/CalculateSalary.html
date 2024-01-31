@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div ng-app="salaryApp" ng-controller="salaryController">
+        <label for="firstName">First Name:</label>
+        <input type="text" ng-model="firstName"><br>
+        <label for="lastName">Last Name:</label>
+        <input type="text" ng-model="lastName"><br>
+        <label for="hra">HRA (House Rent Allowance):</label>
+        <input type="number" ng-model="hra"><br>
+        <label for="da">DA (Dearness Allowance):</label>
+        <input type="number" ng-model="da"><br>
+        <label for="basic">Basic Salary:</label>
+        <input type="number" ng-model="basic"><br>
+        <p>Full Name: {{fullName()}}</p>
+        <p>Net Salary: {{calculateSalary()}}</p>
+        </div>
+        <script>
+        angular.module('salaryApp', [])
+        .controller('salaryController', function ($scope) {
+        $scope.fullName = function () {
+        return $scope.firstName + ' ' + $scope.lastName;
+        };
+        $scope.calculateSalary = function () {
+
+        var deductions = 1000;
+        return ($scope.basic + $scope.hra + $scope.da) - deductions;
+        };
+        });
+        </script>
+        
+</body>
+</html>
