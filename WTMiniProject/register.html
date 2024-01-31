@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <style>
+        .bg-purple {
+            background-color: #5e5873;
+            color: #ffffff;
+        }
+
+        .border-purple {
+            border-color: #5e5873;
+        }
+        body {
+	background: linear-gradient(90deg, #C7C5F4, #776BCC);		
+}
+    </style>
+</head>
+<body >
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card bg-purple border-purple">
+                    <div class="card-header bg-purple border-purple text-center">
+                        <h3>Registration Form</h3>
+                    </div>
+                    <div class="card-body">
+                        <form method="post" action="/formSubmit">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="name" name="name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="date" class="form-label">Date of Birth</label>
+                                <input type="date" class="form-control" id="date" name="date" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="gender" class="form-label">Gender</label>
+                                <select class="form-select" id="gender" name="gender" required>
+                                    <option value="">Select</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="class" class="form-label">Class</label>
+                                <input type="text" class="form-control" id="class" name="cls" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="registrationCode" class="form-label">Registration Code</label>
+                                <input type="text" class="form-control" id="registrationCode" name="regCode" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <a href="/logout"  class="btn btn-primary ">Logout</a>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoJtKh7z7lGz7fuP4F8nfdFvAOA6Gg/z6Y5J6XqqyGXYM2ntXt1tfYNj81/ig8X97Vi7G" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pzjw8f+ua7Kw1TIq0v8FqFjcJ6pajs/rfdfs3SO+kD4Ck5BdPtF+to8x
